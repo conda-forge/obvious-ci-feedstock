@@ -1,11 +1,10 @@
-{% set data = load_setuptools() %}
-
 package:
     name: obvious-ci
-    version: {{data.get('version')}}
+    version: 0.5.0
 
 source:
-    path: ../
+    git_url: https://github.com/pelson/Obvious-CI.git
+    git_tag: v0.5.0
 
 requirements:
     build:
