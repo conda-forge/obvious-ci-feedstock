@@ -3,8 +3,8 @@ package:
     version: 0.5.0
 
 source:
-    git_url: https://github.com/pelson/Obvious-CI.git
-    git_tag: v0.5.0
+    url: https://github.com/pelson/Obvious-CI/archive/v0.5.0.tar.gz
+    fn: obvious-ci_v0.5.0.tar.gz 
 
 requirements:
     build:
