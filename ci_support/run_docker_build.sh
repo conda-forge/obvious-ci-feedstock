@@ -28,7 +28,7 @@ cat << EOF | docker run -i \
                         -v ${RECIPE_ROOT}:/recipe_root \
                         -v ${FEEDSTOCK_ROOT}:/feedstock_root \
                         -a stdin -a stdout -a stderr \
-                        pelson/conda64_obvious_ci \
+                        pelson/obvious-ci:latest_x64 \
                         bash || exit $?
 
 export PYTHONUNBUFFERED=1
@@ -49,7 +49,7 @@ cat << EOF | docker run -i \
                         -v ${RECIPE_ROOT}:/recipe_root \
                         -v ${FEEDSTOCK_ROOT}:/feedstock_root \
                         -a stdin -a stdout -a stderr \
-                        pelson/conda64_obvious_ci \
+                        pelson/obvious-ci:latest_x64 \
                         bash || exit $?
 
 export BINSTAR_TOKEN=${BINSTAR_TOKEN}
