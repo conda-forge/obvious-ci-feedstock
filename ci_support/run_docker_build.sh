@@ -5,7 +5,6 @@
 FEEDSTOCK_ROOT=$(cd "$(dirname "$0")/.."; pwd;)
 RECIPE_ROOT=$FEEDSTOCK_ROOT/recipe
 
-UPLOAD_OWNER="[]"
 UPLOAD_CHANNEL="main"
 
 docker info
@@ -13,6 +12,8 @@ docker info
 config=$(cat <<CONDARC
 
 channels:
+
+ - conda-forge
 
  - defaults # As we need conda-build
 
@@ -60,7 +61,9 @@ conda info
 
 
 conda build --test /recipe_root || exit 1
-/feedstock_root/ci_support/upload_or_check_non_existence.py /recipe_root $UPLOAD_OWNER --channel=$UPLOAD_CHANNEL || exit 1
+
+/feedstock_root/ci_support/upload_or_check_non_existence.py /recipe_root conda-forge --channel=main || exit 1
+
 
 
 EOF
