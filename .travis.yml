@@ -12,9 +12,11 @@ env:
 
   matrix:
     
-    - CONDA_PY=2.7  
+    - CONDA_PY=27  
     
-    - CONDA_PY=3.4  
+    - CONDA_PY=34  
+    
+    - CONDA_PY=35  
     
 
 
@@ -35,9 +37,12 @@ install:
       conda install --yes conda-build jinja2 anaconda-client
 
       
+      conda config --add channels conda-forge
+      
 
 script:
   - conda build ./recipe
 
 after_success:
-  - ./ci_support/upload_or_check_non_existence.py ./recipe [] --channel=main
+
+  - ./ci_support/upload_or_check_non_existence.py ./recipe conda-forge --channel=main

@@ -5,7 +5,6 @@
 FEEDSTOCK_ROOT=$(cd "$(dirname "$0")/.."; pwd;)
 RECIPE_ROOT=$FEEDSTOCK_ROOT/recipe
 
-UPLOAD_OWNER="[]"
 UPLOAD_CHANNEL="main"
 
 docker info
@@ -13,6 +12,8 @@ docker info
 config=$(cat <<CONDARC
 
 channels:
+
+ - conda-forge
 
  - defaults # As we need conda-build
 
@@ -39,8 +40,25 @@ conda clean --lock
 conda info
 
 
-conda build --no-test /recipe_root || exit 1
+# Embarking on 3 case(s).
 
+    set -x
+    export CONDA_PY=27
+    set +x
+    conda build --no-test /recipe_root || exit 1
+    
+
+    set -x
+    export CONDA_PY=34
+    set +x
+    conda build --no-test /recipe_root || exit 1
+    
+
+    set -x
+    export CONDA_PY=35
+    set +x
+    conda build --no-test /recipe_root || exit 1
+    
 EOF
 
 
@@ -59,8 +77,23 @@ echo "$config" > ~/.condarc
 conda info
 
 
-conda build --test /recipe_root || exit 1
-/feedstock_root/ci_support/upload_or_check_non_existence.py /recipe_root $UPLOAD_OWNER --channel=$UPLOAD_CHANNEL || exit 1
-
+    export CONDA_PY=27
+    
+    conda build --test /recipe_root || exit 1
+    
+    /feedstock_root/ci_support/upload_or_check_non_existence.py /recipe_root conda-forge --channel=main || exit 1
+    
+    export CONDA_PY=34
+    
+    conda build --test /recipe_root || exit 1
+    
+    /feedstock_root/ci_support/upload_or_check_non_existence.py /recipe_root conda-forge --channel=main || exit 1
+    
+    export CONDA_PY=35
+    
+    conda build --test /recipe_root || exit 1
+    
+    /feedstock_root/ci_support/upload_or_check_non_existence.py /recipe_root conda-forge --channel=main || exit 1
+    
 
 EOF
