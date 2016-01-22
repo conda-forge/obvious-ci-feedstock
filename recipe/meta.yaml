@@ -1,10 +1,10 @@
 package:
     name: obvious-ci
-    version: 0.5.0
+    version: 0.6.0
 
 source:
-    url: https://github.com/pelson/Obvious-CI/archive/v0.5.0.tar.gz
-    fn: obvious-ci_v0.5.0.tar.gz 
+    url: https://github.com/pelson/Obvious-CI/archive/v0.6.0.tar.gz
+    fn: obvious-ci_v0.6.0.tar.gz 
 
 requirements:
     build:
