@@ -26,3 +26,13 @@ test:
   commands:
     - unset CONDA_NPY && obvci_conda_build_dir --help  # [not win]
     - obvci_conda_build_dir --help  # [win]
+
+about:
+  home: https://github.com/pelson/Obvious-CI
+  license: BSD-3
+  summary: Tools to simplify Continuous Integration, particularly for conda building.
+
+extra:
+  recipe-maintainers:
+    - pelson
+    - mwcraig
