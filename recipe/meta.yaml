@@ -1,10 +1,12 @@
+{% set version="0.6.1" %}
+
 package:
     name: obvious-ci
-    version: 0.6.0
+    version: {{version}}
 
 source:
-    url: https://github.com/pelson/Obvious-CI/archive/v0.6.0.tar.gz
-    fn: obvious-ci_v0.6.0.tar.gz 
+    url: https://github.com/pelson/Obvious-CI/archive/v{{ version }}.tar.gz
+    fn: obvious-ci_v{{ version }}.tar.gz 
 
 requirements:
     build:
