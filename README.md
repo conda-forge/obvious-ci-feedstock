@@ -3,9 +3,9 @@ About obvious-ci
 
 Home: https://github.com/pelson/Obvious-CI
 
-Package license: BSD-3
+Package license: BSD 3-Clause
 
-Feedstock license: BSD
+Feedstock license: BSD 3-Clause
 
 Summary: Tools to simplify Continuous Integration, particularly for conda building.
 
@@ -72,6 +72,11 @@ Current build status
 Linux: [![Circle CI](https://circleci.com/gh/conda-forge/obvious-ci-feedstock.svg?style=svg)](https://circleci.com/gh/conda-forge/obvious-ci-feedstock)
 OSX: [![TravisCI](https://travis-ci.org/conda-forge/obvious-ci-feedstock.svg?branch=master)](https://travis-ci.org/conda-forge/obvious-ci-feedstock) 
 Windows: [![AppVeyor](https://ci.appveyor.com/api/projects/status/github/conda-forge/obvious-ci-feedstock?svg=True)](https://ci.appveyor.com/project/conda-forge/obvious-ci-feedstock/branch/master)
+
+Current release info
+====================
+Version: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/obvious-ci/badges/version.svg)](https://anaconda.org/conda-forge/obvious-ci)
+Downloads: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/obvious-ci/badges/downloads.svg)](https://anaconda.org/conda-forge/obvious-ci)
 
 
 Updating obvious-ci-feedstock
