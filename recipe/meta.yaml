@@ -1,24 +1,29 @@
 {% set version="0.6.1" %}
 
 package:
-    name: obvious-ci
-    version: {{version}}
+  name: obvious-ci
+  version: {{version}}
 
 source:
-    url: https://github.com/pelson/Obvious-CI/archive/v{{ version }}.tar.gz
-    fn: obvious-ci_v{{ version }}.tar.gz 
+  url: https://github.com/pelson/Obvious-CI/archive/v{{ version }}.tar.gz
+  fn: obvious-ci_v{{ version }}.tar.gz
+  sha256: 03a39402a6c09cd4342109bebfe6aac05a09d11e04e39f7b2f0ddfcbd33d2d91 
+
+build:
+  number: 0
+  script: python setup.py install --single-version-externally-managed --record=record.txt
 
 requirements:
-    build:
-        - python
-        - setuptools
+  build:
+    - python
+    - setuptools
 
-    run:
-        - python
-        - setuptools
-        - anaconda-client
-        - conda
-        - conda-build
+  run:
+    - python
+    - setuptools
+    - anaconda-client
+    - conda
+    - conda-build
 
 test:
   imports:
@@ -31,7 +36,7 @@ test:
 
 about:
   home: https://github.com/pelson/Obvious-CI
-  license: BSD-3
+  license: BSD 3-Clause
   summary: Tools to simplify Continuous Integration, particularly for conda building.
 
 extra:
