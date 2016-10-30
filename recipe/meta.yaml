@@ -7,10 +7,12 @@ package:
 source:
   url: https://github.com/pelson/Obvious-CI/archive/v{{ version }}.tar.gz
   fn: obvious-ci_v{{ version }}.tar.gz
-  sha256: 03a39402a6c09cd4342109bebfe6aac05a09d11e04e39f7b2f0ddfcbd33d2d91 
+  sha256: 03a39402a6c09cd4342109bebfe6aac05a09d11e04e39f7b2f0ddfcbd33d2d91
+  patches:
+    - miniconda_url.patch
 
 build:
-  number: 0
+  number: 1
   script: python setup.py install --single-version-externally-managed --record=record.txt
 
 requirements:

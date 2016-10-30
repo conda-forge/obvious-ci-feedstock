@@ -1,0 +1,11 @@
+--- Obvious-CI-0.6.1.orig/bootstrap-obvious-ci-and-miniconda.py	2016-01-25 07:05:56.000000000 -0300
++++ Obvious-CI-0.6.1/bootstrap-obvious-ci-and-miniconda.py	2016-10-30 12:53:32.690729400 -0300
+@@ -19,7 +19,7 @@
+ except ImportError:
+     from urllib import urlretrieve
+ 
+-MINICONDA_URL_TEMPLATE = ('http://repo.continuum.io/miniconda/Miniconda{major_py_version}-'
++MINICONDA_URL_TEMPLATE = ('https://repo.continuum.io/miniconda/Miniconda{major_py_version}-'
+                           '{miniconda_version}-{OS}-{arch}.{ext}')
+ 
+ 
