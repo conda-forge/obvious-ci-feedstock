@@ -1,8 +1,8 @@
-{% set version="0.6.1" %}
+{% set version = "0.6.1" %}
 
 package:
   name: obvious-ci
-  version: {{version}}
+  version: {{ version }}
 
 source:
   url: https://github.com/pelson/Obvious-CI/archive/v{{ version }}.tar.gz
@@ -33,9 +33,10 @@ test:
     - obvci
     - obvci.conda_tools
     - obvci.cli
+
   commands:
     - unset CONDA_NPY && obvci_conda_build_dir --help  # [not win]
-    - obvci_conda_build_dir --help  # [win]
+    - obvci_conda_build_dir --help                     # [win]
 
 about:
   home: https://github.com/pelson/Obvious-CI
