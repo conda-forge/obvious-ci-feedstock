@@ -40,6 +40,7 @@ test:
 about:
   home: https://github.com/pelson/Obvious-CI
   license: BSD 3-Clause
+  license_family: BSD
   summary: Tools to simplify Continuous Integration, particularly for conda building.
 
 extra:
